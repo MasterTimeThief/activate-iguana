@@ -1,5 +1,7 @@
 //OAuth token
-var OAuth = "";
+var appOAuth = "";
+var userOAuth = "";
+
 $.ajax({
 	url: "https://id.twitch.tv/oauth2/token",
 	data: {
@@ -10,7 +12,7 @@ $.ajax({
 	type: "POST",
 	async: false,
 	success: function (e) {
-		OAuth = e.access_token;
+		appOAuth = e.access_token;
 	}
 });
 
@@ -26,11 +28,11 @@ $.ajax({
 	type: "POST",
 	async: false,
 	success: function (e) {
-		OAuth = e.access_token;
+		userOAuth = e.access_token;
 	}
 });
 
 
 
 
-OAuth = "3159ix5d7vxfgddiq2m5jjiaa3lfqf";
+userOAuth = "3159ix5d7vxfgddiq2m5jjiaa3lfqf";

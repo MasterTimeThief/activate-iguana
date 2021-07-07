@@ -1,91 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="auth.js"></script>
-<script src="iguana.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="auth.js"></script>
+	<script src="iguana.js"></script>
 </head>
 <body>
 
-
-
-<img   id="iguanaImage" width="100%" src="Iguana.png">
-
-
-
-<pre id="error"></pre>
-<pre id="data"></pre>
-
-
-
-
-
-
-
-<!-- USED TO MAKE REWARDS -- >
-	<pre id="timer">Running Time: 0</pre>
-	<a href="https://id.twitch.tv/oauth2/authorize?response_type=token&client_id=tqahdriub350ewyf86ip5p1h4hzx6g&redirect_uri=http://localhost&scope=channel:read:redemptions">login</a>
-<script>
-	var redemotionMakeURL = "https://api.twitch.tv/helix/channel_points/custom_rewards?broadcaster_id=83513015";
-
-	var redepmtData = {
-		title: "Deactivate Iguana",
-		cost: "69"
-	};
-
-</script>
-
-
-
-
-<button onclick="cURLrequest(redemotionMakeURL, 'POST', OAuth, redepmtData);">Make redemption things</button>
-
-
-
-<!-- USED TO MAKE REWARDS -->
-
-
-
-
-
-<audio id="activate"   src="sfx-activate.mp3"></audio>
-<audio id="deactivate" src="sfx-deactivate.mp3"></audio>
-
-<script>
-	//$("#activate")[0].play();
-
-
-	//Barry: 25181720
-	// MTT:  83513015
-	var runTime = 0;
-
-
-	//var curlUrl = "https://api.twitch.tv/helix/search/channels?query=mastertimethief";
-	//var curlUrl = "https://api.twitch.tv/helix/channel_points/custom_rewards/redemptions?broadcaster_id=83513015&reward_id=886bd9e5-17dc-4c46-921d-0d63a1656940&status=UNFULFILLED";
-	var curlUrl = "https://api.twitch.tv/helix/channel_points/custom_rewards?broadcaster_id=83513015";
-
-
-	activateID = "886bd9e5-17dc-4c46-921d-0d63a1656940";
-	deactivateID = "ffb71cc6-a1e6-412c-9827-a5e2b7568ad4";
-
+	<img id="iguanaImage" width="100%" src="Iguana.png">
+	<pre id="error"></pre>
+	<pre id="data"></pre>
 	
-	var iguanaStatus = "ACTIVATED";
-	setInterval(function(){
-		//this code runs every second 
-		checkIguana();
-	}, 5000);
+	<audio id="activate"   src="sfx-activate.mp3"></audio>
+	<audio id="deactivate" src="sfx-deactivate.mp3"></audio>
+
+
+	<!-- USED TO MAKE REWARDS -- >
+		<pre id="timer">Running Time: 0</pre>
+		<a href="https://id.twitch.tv/oauth2/authorize?response_type=token&client_id=tqahdriub350ewyf86ip5p1h4hzx6g&redirect_uri=http://localhost&scope=channel:read:redemptions">login</a>
+	<script>
+		var redemotionMakeURL = "https://api.twitch.tv/helix/channel_points/custom_rewards?broadcaster_id=83513015";
+
+		var redepmtData = {
+			title: "Deactivate Iguana",
+			cost: "69"
+		};
+
+	</script>
 
 
 
 
-</script>
+	<button onclick="cURLrequest(redemotionMakeURL, 'POST', OAuth, redepmtData);">Make redemption things</button>
 
 
+
+	<!-- USED TO MAKE REWARDS -->
+
+
+
+
+
+	<script>
+		//$("#activate")[0].play();
+
+
+		//Barry: 25181720
+		// MTT:  83513015
+		//var runTime = 0;
+
+		
+
+
+		//var curlUrl = "https://api.twitch.tv/helix/search/channels?query=mastertimethief";
+		//var curlUrl = "https://api.twitch.tv/helix/channel_points/custom_rewards/redemptions?broadcaster_id=83513015&reward_id=886bd9e5-17dc-4c46-921d-0d63a1656940&status=UNFULFILLED";
+		//var curlUrl = "https://api.twitch.tv/helix/channel_points/custom_rewards?broadcaster_id=83513015";
+
+
+		
+
+		
+		
+		setInterval(function(){
+			//this code runs every second 
+			mainLoop();
+		}, 1000);
+
+		
+
+
+
+
+	</script>
 </body>
 </html>
-
-<!--
-
-curl --location --request GET "https://api.twitch.tv/helix/search/channels?query=a_seagull" --header "client-id: tqahdriub350ewyf86ip5p1h4hzx6g" --header "Authorization: Bearer 2gbdx6oar67tqtcmt49t3wpcgycthx"
-
--->
