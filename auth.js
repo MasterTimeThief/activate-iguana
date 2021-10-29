@@ -3,11 +3,12 @@ var appOAuth = "";
 var userOAuth = "";
 
 //OAuth client credentials
-$.ajax({
+//Is this needed?
+/*$.ajax({
 	url: "https://id.twitch.tv/oauth2/token",
 	data: {
 		client_id: "tqahdriub350ewyf86ip5p1h4hzx6g",
-		client_secret: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+		client_secret: "xxxxxxxxxxxxxxxx",
 		grant_type: "client_credentials"
 	},
 	type: "POST",
@@ -15,7 +16,7 @@ $.ajax({
 	success: function (e) {
 		appOAuth = e.access_token;
 	}
-});
+});*/
 
 //User OAuth (OAuth implicit code)
 $.ajax({
