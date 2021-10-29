@@ -1,66 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="auth.js"></script>
-	<script src="iguana.js"></script>
+	<script>
+		document.location.href = 'iguana.html' + document.location.search;
+	</script>
 </head>
 <body>
 
-	<img id="iguanaImage" width="100%" src="Iguana.png">
-	<pre id="error"></pre>
-	<pre id="data"></pre>
-	
-	<audio id="activate"   src="sfx-activate.mp3"></audio>
-	<audio id="deactivate" src="sfx-deactivate.mp3"></audio>
-
-
-	<!-- USED TO MAKE REWARDS -- >
-		<pre id="timer">Running Time: 0</pre>
-		<a href="https://id.twitch.tv/oauth2/authorize?response_type=token&client_id=tqahdriub350ewyf86ip5p1h4hzx6g&redirect_uri=http://localhost&scope=channel:read:redemptions%20channel:manage:redemptions&force_verify=true">login</a>
-	<script>
-		var redemotionMakeURL = "https://api.twitch.tv/helix/channel_points/custom_rewards?broadcaster_id=83513015";
-
-		var redepmtData = {
-			title: "Deactivate Iguana",
-			cost: "69"
-		};
-
-	</script>
-
-
-
-
-	<button onclick="cURLrequest(redemotionMakeURL, OAuth, redepmtData, 'POST');">Make redemption things</button>
-
-
-
-	<!-- USED TO MAKE REWARDS -->
-
-
-
-
-
-	<script>
-		//$("#activate")[0].play();
-
-
-		//Barry: 25181720
-		// MTT:  83513015
-		//var runTime = 0;
-
-		
-		
-		setInterval(function(){
-			//this code runs every second 
-			mainLoop();
-		}, 1000);
-
-		
-
-
-
-
-	</script>
 </body>
 </html>
