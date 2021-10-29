@@ -1,5 +1,5 @@
 //OAuth token
-var appOAuth = "";
+//var appOAuth = "";
 var userOAuth = "";
 
 //OAuth client credentials
