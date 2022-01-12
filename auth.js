@@ -1,6 +1,6 @@
 //OAuth token
-//var appOAuth = "";
-var userOAuth = "";
+let params = new URLSearchParams(document.location.search.substring(1));
+var userOAuth = params.get("access_token"); //Generate seperately
 
 //OAuth client credentials
 //Is this needed?

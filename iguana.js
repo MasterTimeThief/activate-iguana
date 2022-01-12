@@ -1,12 +1,17 @@
 /* GLOBAL VARIABLES */
 let params = new URLSearchParams(document.location.search.substring(1));
-var broadcaster = params.get("bid");
 var userOAuth = params.get("token"); //Generate seperately
+//var broadcaster = params.get("bid");
+var userData = cURLrequest("https://api.twitch.tv/helix/users", userOAuth);
+var broadcaster = userData.data[0].id;
 
 var activateID = "886bd9e5-17dc-4c46-921d-0d63a1656940";
 var deactivateID = "ffb71cc6-a1e6-412c-9827-a5e2b7568ad4";
 var iguanaStatus = true;
 var isRunning = false;
+
+
+
 
 
 function cURLrequest(destination, token, curlData={}, action="GET"){
@@ -20,12 +25,15 @@ function cURLrequest(destination, token, curlData={}, action="GET"){
 			"Authorization":"Bearer " + String(token)
 		},
 		success: function (e) {
-			//console.log(iguanaStatus + JSON.stringify(e.data, null, 4));
+			console.log(iguanaStatus + JSON.stringify(e.data, null, 4));
 			response = e;
 		},
 		error: function(e) {
 			//response = JSON.stringify(e.responseText);
 			console.log(JSON.stringify(e.responseText));
+			if(e.responseJSON.message == "Invalid OAuth token"){
+				$("#expired").show();
+			}
 		}
 	});
 
@@ -35,7 +43,7 @@ function cURLrequest(destination, token, curlData={}, action="GET"){
 
 
 //Make function to check if the custom rewards exist, and if not, create them
-function createRewards(){
+function initRewards(){
 
 }
 
